@@ -1,9 +1,23 @@
 {
   "name": "stretch-project-1",
-  "version": "0.0.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "bar chart project",
   "devDependencies": {
     "eslint": "^3.19.0",
-    "eslint-config-lighthouselabs": "lighthouse-labs/eslint-config-lighthouselabs"
-  }
+    "eslint-config-lighthouselabs": "github:lighthouse-labs/eslint-config-lighthouselabs"
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alvintol/barchart-project.git"
+  },
+  "author": "\"Alvin Tolentino\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alvintol/barchart-project/issues"
+  },
+  "homepage": "https://github.com/Alvintol/barchart-project#readme"
 }
