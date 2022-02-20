@@ -21,4 +21,5 @@ function drawBarChart(data, options, elements) {
   console.log(elements);
 }
 
+
 console.log(drawBarChart(data, options, elements))

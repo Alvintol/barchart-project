@@ -5,23 +5,49 @@
     <link rel="config" href=".editorconfig" />
     <link rel="lint" href=".eslintrc.js" />
     <script src="bar-chart.js"></script>
-
     <title>Bar Chart Project</title>
     <h1 id="title" class="uAccess" contenteditable="true">Bar Chart Project</h1>
   </head>
   <hr />
   <main class="container">
-    <section id="chart" class="column">
-      <div class="axis column">
-        <h3 id="axisX" class="uAccess" contenteditable="true">X-Axis</h3>
-      </div>
-      <body>
-        <script type="javascript" src="bar-chart.js"></script>
-      </body>
-    </section>
-    <div class="axis">
-      <h3 id="axisY" class="uAccess" contenteditable="true">Y-Axis</h3>
-    </div>
+    <body>
+      
+      <!-- bar chart box with border-->
+      <section id="chart" class="column">
+        
+        <!-- container for X-Axis -->
+        <div class="row">
+          <div id="axisX" class="axis column">
+            <h2  class="uAccess" contenteditable="true">X-Axis</h2>
+          </div>
+          <div id="leftBar" class="left">
+            <div id="flexLeft" class="container column">
+              <div class="scale row">1</div>
+              <div class="scale row">2</div>
+              <div class="scale row">3</div>
+            </div>
+          </div>
+          <div id="flexBox" class="container column">
+            <div class="column bar">1</div>
+            <div class="column bar">2</div>
+            <div class="column bar">3</div>
+          </div>
+        </div>
+        
+        <!-- container for Y-Axis -->
+        <div class="column">
+          <div id="bottomBar" class="axis">
+            <div id="flexBottom" class="container">
+              <div class="item column">1</div>
+              <div class="item column">2</div>
+              <div class="item column">3</div>
+            </div>
+          </div>
+          <h2 id="axisY" class="uAccess" contenteditable="true">Y-Axis</h2>
+        </div>
+
+      </section>
+    </body>
   </main>
   <footer>Alvin Tolentino</footer>
 </html>
