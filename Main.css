@@ -1,5 +1,14 @@
-html{
-  background-color: gray;
+html {
+  background-color: rgb(32, 16, 36);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #0a0f0f;
 }
 h1 {
   position: relative;
@@ -7,15 +16,48 @@ h1 {
   height: auto;
   margin: auto auto 5px auto;
   text-align: center;
-  background-color: #a3c292;
+  color: #b37313;
+  opacity: 0.8;
 }
-body {
+h3 {
+  color: #b37313;
+}
+.container {
+  background-color: #c5cece;
+  width: 100%;
+  height: 600px;
+  margin-top: 10px;
+  /* padding: 15px; */
+}
+.axis {
+  display: flex;
+  color:rgb(32, 16, 36);
+  text-align: center;
+  margin: 0;
 
 }
-#container{
-  background-color: #a3c2c2;
-  width: 100%;
+#axisX {
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  transform: rotate(180deg);
+  border-left: solid;
+  border-color: #0a0f0f;
+}
+#axisY {
+  position: relative;
+  width: 95%;
+  margin: auto;
+}
+#chart { 
+  background-color: rgba(243, 253, 253, 0.034);
+  display: flex;
+  position: relative;
+  width: 95%;
   height: 500px;
+  margin: auto;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #0a0f0f;
 }
 footer {
   position: absolute;
