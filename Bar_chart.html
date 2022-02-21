@@ -2,52 +2,57 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="Main.css" />
+    <link rel="stylesheet" href="adjustable.css">
     <link rel="config" href=".editorconfig" />
-    <link rel="lint" href=".eslintrc.js" />
-    <script src="bar-chart.js"></script>
+    <script rel="lint" href=".eslintrc.js"></script>
     <title>Bar Chart Project</title>
     <h1 id="title" class="uAccess" contenteditable="true">Bar Chart Project</h1>
   </head>
   <hr />
   <main class="container">
     <body>
-      
       <!-- bar chart box with border-->
       <section id="chart" class="column">
-        
         <!-- container for X-Axis -->
         <div class="row">
           <div id="axisX" class="axis column">
-            <h2  class="uAccess" contenteditable="true">X-Axis</h2>
+            <h2 class="uAccess" contenteditable="true">X-Axis</h2>
           </div>
           <div id="leftBar" class="left">
-            <div id="flexLeft" class="container column">
-              <div class="scale row">1</div>
-              <div class="scale row">2</div>
-              <div class="scale row">3</div>
+            <div id="flexLeft" class="container row">
+              <div class="scale row">20</div>
+              <div class="scale row">40</div>
+              <div class="scale row">60</div>
+              <div class="scale row">80</div>
+              <div class="scale row">100</div>
             </div>
           </div>
           <div id="flexBox" class="container column">
-            <div class="column bar">1</div>
-            <div class="column bar">2</div>
-            <div class="column bar">3</div>
+            <div id="bar0" class="column bar">1</div>
+            <div id="bar1" class="column bar">2</div>
+            <div id="bar2" class="column bar">3</div>
+            <div id="bar3" class="column bar">4</div>
+            <div id="bar4" class="column bar">5</div>
           </div>
         </div>
-        
+
         <!-- container for Y-Axis -->
         <div class="column">
-          <div id="bottomBar" class="axis">
+          <div id="bottomBar" class="axis row">
+            <div id="corner" class="column"></div>
             <div id="flexBottom" class="container">
-              <div class="item column">1</div>
-              <div class="item column">2</div>
-              <div class="item column">3</div>
+              <div id="item0" class="item column" contenteditable="true">1</div>
+              <div id="item1" class="item column" contenteditable="true">2</div>
+              <div id="item2" class="item column" contenteditable="true">3</div>
+              <div id="item3" class="item column" contenteditable="true">4</div>
+              <div id="item4" class="item column" contenteditable="true">5</div>
             </div>
           </div>
           <h2 id="axisY" class="uAccess" contenteditable="true">Y-Axis</h2>
         </div>
-
       </section>
     </body>
   </main>
   <footer>Alvin Tolentino</footer>
+  <script src="bar-chart.js"></script>
 </html>
