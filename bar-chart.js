@@ -31,6 +31,7 @@ document.getElementById("chartDisplay").onclick = function () {
   displayDetails = chartDisplay;
   scaleDisplay();
   titleColorChange();
+  titleSizeChange();
 }
 //chart input data 
 document.getElementById("chartData").onclick = function () {
@@ -82,6 +83,11 @@ const titleColorChange = function () {
       titles[b].style.color = displayDetails.titleColor;
   }
 };
+
+//function that changes title size
+const titleSizeChange = () => document.getElementById("title0").style.fontSize = displayDetails.titleSize;
+
+
 
 const barZero = document.getElementsByClassName("bar0");
 window.addEventListener("load", () => {
