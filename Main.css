@@ -51,14 +51,6 @@ h1 {
   flex-direction: row;
   justify-content: space-evenly;
 }
-.bar {
-  /* background-color: rgb(134, 193, 207); */
-  margin: 1% 1% -10px 1%;
-  text-align: center;
-  flex-direction: column-reverse;
-  justify-content: space-evenly;
-  z-index: 1;
-}
 .left {
   width: 4%;
   position: relative;

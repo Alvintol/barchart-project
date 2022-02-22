@@ -4,7 +4,15 @@
 .scale {
   font-weight: bold;
 }
-#bar0 {
+.bar {
+  /* background-color: rgb(134, 193, 207); */
+  margin: 1% 1% -10px 1%;
+  text-align: center;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  z-index: 1;
+}
+/* #bar0 {
   position: relative;
 }
 #bar0:before {
@@ -103,15 +111,4 @@
 #bar4.expanded:before {
   transform: scale(1, 60%);
   transform-origin: bottom;
-}
-
-#item0 {
-}
-#item1 {
-}
-#item2 {
-}
-#item3 {
-}
-#item4 {
-}
+} */

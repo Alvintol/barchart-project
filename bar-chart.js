@@ -19,7 +19,13 @@ const options = {
   height: 100
 }
 
-//chart input display
+// function drawBarChart(data, options, elements) {
+//   console.log(data);
+//   console.log(options);
+//   console.log(elements);
+// }
+
+//function that changes chart display details
 document.getElementById("chartDisplay").onclick = function () {
   let chartDisplay = {
     titleColor: document.getElementById("titleColor").value,
@@ -29,37 +35,12 @@ document.getElementById("chartDisplay").onclick = function () {
   };
 
   displayDetails = chartDisplay;
-  scaleDisplay();
   titleColorChange();
   titleSizeChange();
+  scaleDisplay();
 }
-//chart input data 
-document.getElementById("chartData").onclick = function () {
-  let chartInput = {
-    label: document.getElementById("inputLabel").value,
-    labelColor: document.getElementById("inputLabelColor").value,
-    quantity: document.getElementById("inputQuantity").value,
-    barColor: document.getElementById("inputBarColor").value
-  };
-  data.push(chartInput);
-  console.log(chartInput);
-  console.log(data);
-}
-//function to clear input feilds
-const btnDisplay = document.getElementById("chartDisplay");
-btnDisplay.addEventListener("click", function () {
-  let inputs = document.querySelectorAll(".input");
-  inputs.forEach(input => {
-    input.value = '';
-  });
-});//second submit button
-const button = document.getElementById("chartData");
-button.addEventListener("click", function () {
-  let input = document.querySelectorAll(".input");
-  input.forEach(item => {
-    item.value = "";
-  });
-});
+
+
 
 //function that changes scale units
 const scaleDisplay = function () {
@@ -87,39 +68,86 @@ const titleColorChange = function () {
 //function that changes title size
 const titleSizeChange = () => document.getElementById("title0").style.fontSize = displayDetails.titleSize;
 
+/***********************
+ * incomplete function
+ */
+//function that changes quantity display position
+const quantityPosition = function () {
 
-
-const barZero = document.getElementsByClassName("bar0");
-window.addEventListener("load", () => {
-  bar0.classList.toggle("expanded");
-});
-const barOne = document.getElementsByClassName("bar1");
-window.addEventListener("load", () => {
-  bar1.classList.toggle("expanded");
-});
-const barTwo = document.getElementsByClassName("bar2");
-window.addEventListener("load", () => {
-  bar2.classList.toggle("expanded");
-});
-const barThree = document.getElementsByClassName("bar3");
-window.addEventListener("load", () => {
-  bar3.classList.toggle("expanded");
-});
-const barFour = document.getElementsByClassName("bar4");
-window.addEventListener("load", () => {
-  bar4.classList.toggle("expanded");
-});
-
-
-
-function drawBarChart(data, options, elements) {
-  console.log(data);
-  console.log(options);
-  console.log(elements);
 }
 
-document.getElementById('bar0').innerHTML = `${data[0]}`;
-document.getElementById('bar1').innerHTML = `${data[1]}`;
-document.getElementById('bar2').innerHTML = `${data[2]}`;
-document.getElementById('bar3').innerHTML = `${data[3]}`;
-document.getElementById('bar4').innerHTML = `${data[4]}`;
+//function that chart that creates an object of input data 
+document.getElementById("chartData").onclick = function () {
+  let chartInput = {
+    label: document.getElementById("inputLabel").value,
+    labelColor: document.getElementById("inputLabelColor").value,
+    quantity: document.getElementById("inputQuantity").value,
+    barColor: document.getElementById("inputBarColor").value
+  };
+  data.push(chartInput);
+  console.log(chartInput);
+  console.log(data);  
+  createLabel();
+
+}
+//function that provides a label for object based on user input
+const createLabel = function () {
+
+}
+
+
+//function that changes object label color based on user input
+
+
+//function that provides data quantity based on user input
+
+
+// function that changes object bar color based on user input
+
+
+//function to clear display input fields
+const btnDisplay = document.getElementById("chartDisplay");
+btnDisplay.addEventListener("click", function () {
+  let inputs = document.querySelectorAll(".input");
+  inputs.forEach(input => {
+    input.value = '';
+  });
+});
+//second submit button
+const button = document.getElementById("chartData");
+button.addEventListener("click", function () {
+  let input = document.querySelectorAll(".input");
+  input.forEach(item => {
+    item.value = "";
+  });
+});
+
+
+
+
+// const barZero = document.getElementsByClassName("bar0");
+// window.addEventListener("load", () => {
+//   bar0.classList.toggle("expanded");
+// });
+// const barOne = document.getElementsByClassName("bar1");
+// window.addEventListener("load", () => {
+//   bar1.classList.toggle("expanded");
+// });
+// const barTwo = document.getElementsByClassName("bar2");
+// window.addEventListener("load", () => {
+//   bar2.classList.toggle("expanded");
+// });
+// const barThree = document.getElementsByClassName("bar3");
+// window.addEventListener("load", () => {
+//   bar3.classList.toggle("expanded");
+// });
+// const barFour = document.getElementsByClassName("bar4");
+// window.addEventListener("load", () => {
+//   bar4.classList.toggle("expanded");
+// });
+
+// document.getElementById('bar0').innerHTML = `${data[0]}`;
+// document.getElementById('bar1').innerHTML = `${data[1]}`;
+// document.getElementById('bar2').innerHTML = `${data[2]}`;
+// document.getElementById('bar3').innerHTML = `${data[3]}`;
+// document.getElementById('bar4').innerHTML = `${data[4]}`;
