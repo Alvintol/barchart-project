@@ -20,25 +20,20 @@ const options = {
 }
 
 //chart input display
-document.getElementById("chartDisplay").onclick = function() {
+document.getElementById("chartDisplay").onclick = function () {
   let chartDisplay = {
     titleColor: document.getElementById("titleColor").value,
     titleSize: document.getElementById("titleSize").value,
     scale: document.getElementById("inputScale").value,
     quantityDisplay: document.getElementById("quantityDisplay").value
   };
-  const scaleDisplay = function() { 
-    for (let a = 0; a < scaleNum.length; a++){
-      document.getElementById(`scale${a}`).innerHTML = displayDetails.scale * (a + 1);
-    }
-  }
 
-  console.log(chartDisplay);
-  displayDetails = chartDisplay; 
+  displayDetails = chartDisplay;
   scaleDisplay();
+  titleColorChange();
 }
 //chart input data 
-document.getElementById("chartData").onclick = function() {
+document.getElementById("chartData").onclick = function () {
   let chartInput = {
     label: document.getElementById("inputLabel").value,
     labelColor: document.getElementById("inputLabelColor").value,
@@ -49,31 +44,44 @@ document.getElementById("chartData").onclick = function() {
   console.log(chartInput);
   console.log(data);
 }
-//fuction to clear input feilds
+//function to clear input feilds
 const btnDisplay = document.getElementById("chartDisplay");
-btnDisplay.addEventListener("click", function(){
+btnDisplay.addEventListener("click", function () {
   let inputs = document.querySelectorAll(".input");
   inputs.forEach(input => {
     input.value = '';
-  }); 
-});
+  });
+});//second submit button
 const button = document.getElementById("chartData");
-button.addEventListener("click", function(){
+button.addEventListener("click", function () {
   let input = document.querySelectorAll(".input");
   input.forEach(item => {
     item.value = "";
   });
 });
 
-const scaleNum = [document.getElementById("scale0"),
+//function that changes scale units
+const scaleDisplay = function () {
+  const scaleNum = [document.getElementById("scale0"),
 document.getElementById("scale1"),
 document.getElementById("scale2"),
 document.getElementById("scale3"),
 document.getElementById("scale4")];
+  for (let a = 0; a < scaleNum.length; a++) {
+    document.getElementById(`scale${a}`).innerHTML = (displayDetails.scale * (a + 1)) + "-";
+  }
+}
 
-
-
-
+//function that changes title colors
+const titleColorChange = function () {
+  const titles = [
+    document.getElementById("title0"),
+    document.getElementById("title1"),
+    document.getElementById("title2")];
+    for (let b = 0; b < titles.length; b++){
+      titles[b].style.color = displayDetails.titleColor;
+  }
+};
 
 const barZero = document.getElementsByClassName("bar0");
 window.addEventListener("load", () => {
@@ -104,8 +112,8 @@ function drawBarChart(data, options, elements) {
   console.log(elements);
 }
 
-document.getElementById('bar0').innerHTML= `${data[0]}`;
-document.getElementById('bar1').innerHTML= `${data[1]}`;
-document.getElementById('bar2').innerHTML= `${data[2]}`;
-document.getElementById('bar3').innerHTML= `${data[3]}`;
-document.getElementById('bar4').innerHTML= `${data[4]}`;
+document.getElementById('bar0').innerHTML = `${data[0]}`;
+document.getElementById('bar1').innerHTML = `${data[1]}`;
+document.getElementById('bar2').innerHTML = `${data[2]}`;
+document.getElementById('bar3').innerHTML = `${data[3]}`;
+document.getElementById('bar4').innerHTML = `${data[4]}`;

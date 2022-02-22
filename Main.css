@@ -6,20 +6,12 @@ html {
   padding: 0;
   margin: 0;
 }
-a {
-  text-decoration: none;
-  color: #0a0f0f;
-}
 h1 {
   position: relative;
   width: 100%;
   height: auto;
   margin: auto auto 5px auto;
   text-align: center;
-  color: #b37313;
-}
-h2 {
-  color: #b37313;
 }
 .container {
   background-color: #c5cece;
@@ -30,7 +22,7 @@ h2 {
 }
 .axis {
   display: flex;
-  color:rgb(32, 16, 36);
+  color: rgb(32, 16, 36);
   text-align: center;
   margin: 0;
   /* background-color: yellow; */
@@ -40,7 +32,7 @@ h2 {
   height: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: end;
 }
 .column {
   width: 100%;
@@ -50,7 +42,7 @@ h2 {
   flex-direction: column;
 }
 #flexBox {
-/* background-color: orange; */
+  /* background-color: orange; */
   width: 80%;
   height: 100%;
   margin: auto;
@@ -61,7 +53,7 @@ h2 {
 }
 .bar {
   /* background-color: rgb(134, 193, 207); */
-  margin: 1% 1% -10px 1%;  
+  margin: 1% 1% -10px 1%;
   text-align: center;
   flex-direction: column-reverse;
   justify-content: space-evenly;
@@ -73,7 +65,7 @@ h2 {
   margin: 0;
 }
 #flexLeft {
-/* background-color: green; */
+  /* background-color: green; */
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
@@ -82,7 +74,7 @@ h2 {
   justify-content: space-between;
   flex-direction: column-reverse;
   border-right: solid;
-  float: middle;  
+  float: middle;
 }
 #axisX {
   writing-mode: vertical-lr;
@@ -91,7 +83,7 @@ h2 {
   border-color: #0a0f0f;
   float: left;
   width: 4%;
-/* background-color: blue; */
+  /* background-color: blue; */
 }
 #bottomBar {
   display: flex;
@@ -102,7 +94,7 @@ h2 {
   z-index: 2;
 }
 #flexBottom {
-/* background-color: orangered; */
+  /* background-color: orangered; */
   display: flex;
   flex-direction: row;
   margin-bottom: 5px;
@@ -114,14 +106,14 @@ h2 {
   height: 100%;
   /* background-color: purple; */
 }
-#axisY {
+.axisY {
   display: flex;
   flex-direction: column;
   width: 100%;
   text-align: center;
-/* background-color: greenyellow */
+  /* background-color: greenyellow */
 }
-#chart { 
+#chart {
   /* background-color: rgba(243, 253, 253, 0.034); */
   /* background-color: red; */
   display: flex;
@@ -152,5 +144,5 @@ footer {
   height: 20px;
   opacity: 0.6;
   text-align: right;
-  color: grey
+  color: grey;
 }

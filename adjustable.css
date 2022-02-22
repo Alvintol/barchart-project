@@ -1,3 +1,9 @@
+.userAccess{
+  color: #b37313;
+}
+.scale {
+  font-weight: bold;
+}
 #bar0 {
   position: relative;
 }
@@ -12,7 +18,7 @@
   background: red;
   transform-origin: bottom;
   transition: all 8s;
-  animation: 3s;  
+  animation: 3s;
 }
 #bar0.expanded:before {
   transform: scale(1, 10%);
@@ -32,7 +38,7 @@
   background: red;
   transform-origin: bottom;
   transition: all 8s;
-  animation: 3s;  
+  animation: 3s;
 }
 #bar1.expanded:before {
   transform: scale(1, 40%);
@@ -52,7 +58,7 @@
   background: red;
   transform-origin: bottom;
   transition: all 8s;
-  animation: 3s;  
+  animation: 3s;
 }
 #bar2.expanded:before {
   transform: scale(1, 80%);
@@ -72,7 +78,7 @@
   background: red;
   transform-origin: bottom;
   transition: all 8s;
-  animation: 3s;  
+  animation: 3s;
 }
 #bar3.expanded:before {
   transform: scale(1, 50%);
@@ -92,7 +98,7 @@
   background: red;
   transform-origin: bottom;
   transition: all 8s;
-  animation: 3s;  
+  animation: 3s;
 }
 #bar4.expanded:before {
   transform: scale(1, 60%);
@@ -100,17 +106,12 @@
 }
 
 #item0 {
-  
 }
 #item1 {
-
 }
 #item2 {
-
 }
 #item3 {
-
 }
 #item4 {
-
 }
