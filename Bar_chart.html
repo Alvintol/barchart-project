@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="Main.css" />
     <link rel="stylesheet" href="adjustable.css">
     <link rel="config" href=".editorconfig" />
-    <script rel="lint" href=".eslintrc.js"></script>
     <title>Bar Chart Project</title>
     <h1 id="title0" class="userAccess" contenteditable="true">Bar Chart Project</h1>
   </head>
@@ -52,14 +51,13 @@
           </div>
           <h2 id="title2" class="userAccess axisY" contenteditable="true">Y-Axis</h2>
         </div>
-      </section>
-     
+      </section> 
 <!-- user input -->
       <section id="userInput">
         <div id="chartInput" class="input">
           <select name="titleColor" id="titleColor" class="input">
             <option value="" disabled selected>Title Color</option>
-            <option value="origanl">Original</option>
+            <option value="#b37313">Default</option>
             <option value="red">Red</option>
             <option value="orange">Orange</option>
             <option value="yellow">Yellow</option>
@@ -81,6 +79,15 @@
             <option value="xx-large">2xLarge</option>
           </select>
           <input id="inputScale" class="input" type="number" placeholder="Scale by: Number">
+          <select id="barSpacing" class="input" name="barSpacing">
+            <option value="" disabled selected>Bar Spacing</option>
+            <option value="0">1</option>
+            <option value="2">2</option>
+            <option value="4">3</option>
+            <option value="6">4</option>
+            <option value="8">5</option>
+            <option value="10">6</option>
+          </select>
           <select id="quantityDisplay" class="input" name="quantityDisplay">
             <option value="" disabled selected>Quantity Display</option>
             <option value="centre">Centre</option>
@@ -120,4 +127,5 @@
   </main>
   <footer>Alvin Tolentino</footer>
   <script src="bar-chart.js"></script>
+  <script rel="lint" href=".eslintrc.js"></script>
 </html>

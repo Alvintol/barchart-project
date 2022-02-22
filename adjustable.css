@@ -3,6 +3,7 @@
 }
 .scale {
   font-weight: bold;
+  padding-top: 18px;
 }
 .bar {
   /* background-color: rgb(134, 193, 207); */
@@ -12,103 +13,3 @@
   justify-content: space-evenly;
   z-index: 1;
 }
-/* #bar0 {
-  position: relative;
-}
-#bar0:before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: red;
-  transform-origin: bottom;
-  transition: all 8s;
-  animation: 3s;
-}
-#bar0.expanded:before {
-  transform: scale(1, 10%);
-  transform-origin: bottom;
-} 
-#bar1 {
-  position: relative;
-}
-#bar1:before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: red;
-  transform-origin: bottom;
-  transition: all 8s;
-  animation: 3s;
-}
-#bar1.expanded:before {
-  transform: scale(1, 40%);
-  transform-origin: bottom;
-}
-#bar2 {
-  position: relative;
-}
-#bar2:before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: red;
-  transform-origin: bottom;
-  transition: all 8s;
-  animation: 3s;
-}
-#bar2.expanded:before {
-  transform: scale(1, 80%);
-  transform-origin: bottom;
-}
-#bar3 {
-  position: relative;
-}
-#bar3:before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: red;
-  transform-origin: bottom;
-  transition: all 8s;
-  animation: 3s;
-}
-#bar3.expanded:before {
-  transform: scale(1, 50%);
-  transform-origin: bottom;
-}
-#bar4 {
-  position: relative;
-}
-#bar4:before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: red;
-  transform-origin: bottom;
-  transition: all 8s;
-  animation: 3s;
-}
-#bar4.expanded:before {
-  transform: scale(1, 60%);
-  transform-origin: bottom;
-} */

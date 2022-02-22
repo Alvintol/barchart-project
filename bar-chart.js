@@ -12,6 +12,7 @@ let displayDetails = {
   titleColor: "#b37313",
   titleSize: "large",
   scale: 20,
+  spacing: '1',
   quantityDisplay: 'centre',
 }
 const options = {
@@ -31,27 +32,15 @@ document.getElementById("chartDisplay").onclick = function () {
     titleColor: document.getElementById("titleColor").value,
     titleSize: document.getElementById("titleSize").value,
     scale: document.getElementById("inputScale").value,
+    spacing: document.getElementById("barSpacing").value,
     quantityDisplay: document.getElementById("quantityDisplay").value
   };
 
   displayDetails = chartDisplay;
+  console.log(displayDetails);
   titleColorChange();
   titleSizeChange();
   scaleDisplay();
-}
-
-
-
-//function that changes scale units
-const scaleDisplay = function () {
-  const scaleNum = [document.getElementById("scale0"),
-  document.getElementById("scale1"),
-  document.getElementById("scale2"),
-  document.getElementById("scale3"),
-  document.getElementById("scale4")];
-  for (let a = 0; a < scaleNum.length; a++) {
-    document.getElementById(`scale${a}`).innerHTML = (displayDetails.scale * (a + 1)) + "-";
-  }
 }
 
 //function that changes title colors
@@ -67,6 +56,18 @@ const titleColorChange = function () {
 
 //function that changes title size
 const titleSizeChange = () => document.getElementById("title0").style.fontSize = displayDetails.titleSize;
+
+//function that changes scale units
+const scaleDisplay = function () {
+  const scaleNum = [document.getElementById("scale0"),
+  document.getElementById("scale1"),
+  document.getElementById("scale2"),
+  document.getElementById("scale3"),
+  document.getElementById("scale4")];
+  for (let a = 0; a < scaleNum.length; a++) {
+    document.getElementById(`scale${a}`).innerHTML = (displayDetails.scale * (a + 1)) + "-";
+  }
+}
 
 /***********************
  * incomplete function
@@ -92,28 +93,43 @@ document.getElementById("chartData").onclick = function () {
 
     document.getElementById("flexBottom").appendChild(div);
   }
+  //function that creates a container for bar element in chart
+  const createContainer = function () {
+    let container = document.createElement("div");
+    container.id = `barContainer${data.indexOf(chartInput)}`;
+    container.classList = 'container column';
+    container.innerHTML = `${chartInput.quantity}`;
+    container.style.textAlign = 'center';
+    container.style.display = 'flex';
+    container.style.flexDirection = 'column';
+    container.style.margin = `0 ${displayDetails.spacing}% -0.5% ${displayDetails.spacing}%`;
+    
+
+    document.getElementById("flexBox").appendChild(container);
+  }
   //function that builds bar representing data with quantity number
   const createBar = function () {
     let bar = document.createElement("div");
     bar.id = `bar${data.indexOf(chartInput)}`;
     bar.classList = 'column bar';
-    bar.innerHTML = `${chartInput.quantity}`
     bar.style.position = 'relative';
     bar.style.width = '100%';
     bar.style.height = '100%';
     bar.style.background = `${chartInput.barColor}`;
     bar.style.transformOrigin = 'bottom';
-    let scalePercent = (chartInput.quantity / (displayDetails.scale) * 4) ;
+    let scalePercent = chartInput.quantity / (displayDetails.scale * 5) ;
     bar.style.transform = `scale(1, ${scalePercent})`
 
-    document.getElementById("flexBox").appendChild(bar);
+    document.getElementById(`barContainer${data.indexOf(chartInput)}`).appendChild(bar);
   }
 
   data.push(chartInput);
   console.log(chartInput);
   console.log(data);
   createLabel();
+  createContainer();
   createBar();
+
 }
 
 
