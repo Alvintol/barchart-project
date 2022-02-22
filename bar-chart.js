@@ -45,10 +45,10 @@ document.getElementById("chartDisplay").onclick = function () {
 //function that changes scale units
 const scaleDisplay = function () {
   const scaleNum = [document.getElementById("scale0"),
-document.getElementById("scale1"),
-document.getElementById("scale2"),
-document.getElementById("scale3"),
-document.getElementById("scale4")];
+  document.getElementById("scale1"),
+  document.getElementById("scale2"),
+  document.getElementById("scale3"),
+  document.getElementById("scale4")];
   for (let a = 0; a < scaleNum.length; a++) {
     document.getElementById(`scale${a}`).innerHTML = (displayDetails.scale * (a + 1)) + "-";
   }
@@ -60,8 +60,8 @@ const titleColorChange = function () {
     document.getElementById("title0"),
     document.getElementById("title1"),
     document.getElementById("title2")];
-    for (let b = 0; b < titles.length; b++){
-      titles[b].style.color = displayDetails.titleColor;
+  for (let b = 0; b < titles.length; b++) {
+    titles[b].style.color = displayDetails.titleColor;
   }
 };
 
@@ -85,33 +85,35 @@ document.getElementById("chartData").onclick = function () {
     barColor: document.getElementById("inputBarColor").value
   };
   const createLabel = function () {
-  let div = document.createElement("div");
-  div.id = `label${data.indexOf(chartInput)}`
-  div.classList = ' label column';
-  div.innerHTML = `${chartInput.label}`
-  
-  document.getElementById("flexBottom").appendChild(div);
-}
-//function that changes object label color based on user input
-  const labelColorChoice = function () {
+    let div = document.createElement("div");
+    div.id = `label${data.indexOf(chartInput)}`;
+    div.classList = 'label column';
+    div.innerHTML = `${chartInput.label}`;
 
-  } 
-//function that provides data quantity based on user input
-  const quantityNum = function () {
-
+    document.getElementById("flexBottom").appendChild(div);
   }
-// function that changes object bar color based on user input
-  const barColorChoice = function () {
+  //function that builds bar representing data with quantity number
+  const createBar = function () {
+    let bar = document.createElement("div");
+    bar.id = `bar${data.indexOf(chartInput)}`;
+    bar.classList = 'column bar';
+    bar.innerHTML = `${chartInput.quantity}`
+    bar.style.position = 'relative';
+    bar.style.width = '100%';
+    bar.style.height = '100%';
+    bar.style.background = `${chartInput.barColor}`;
+    bar.style.transformOrigin = 'bottom';
+    let scalePercent = (chartInput.quantity / (displayDetails.scale) * 4) ;
+    bar.style.transform = `scale(1, ${scalePercent})`
 
+    document.getElementById("flexBox").appendChild(bar);
   }
 
   data.push(chartInput);
   console.log(chartInput);
-  console.log(data);  
+  console.log(data);
   createLabel();
-  labelColorChoice();
-  quantityNum();
-  barColorChoice();
+  createBar();
 }
 
 
@@ -132,33 +134,3 @@ button.addEventListener("click", function () {
     item.value = "";
   });
 });
-
-
-
-
-// const barZero = document.getElementsByClassName("bar0");
-// window.addEventListener("load", () => {
-//   bar0.classList.toggle("expanded");
-// });
-// const barOne = document.getElementsByClassName("bar1");
-// window.addEventListener("load", () => {
-//   bar1.classList.toggle("expanded");
-// });
-// const barTwo = document.getElementsByClassName("bar2");
-// window.addEventListener("load", () => {
-//   bar2.classList.toggle("expanded");
-// });
-// const barThree = document.getElementsByClassName("bar3");
-// window.addEventListener("load", () => {
-//   bar3.classList.toggle("expanded");
-// });
-// const barFour = document.getElementsByClassName("bar4");
-// window.addEventListener("load", () => {
-//   bar4.classList.toggle("expanded");
-// });
-
-// document.getElementById('bar0').innerHTML = `${data[0]}`;
-// document.getElementById('bar1').innerHTML = `${data[1]}`;
-// document.getElementById('bar2').innerHTML = `${data[2]}`;
-// document.getElementById('bar3').innerHTML = `${data[3]}`;
-// document.getElementById('bar4').innerHTML = `${data[4]}`;

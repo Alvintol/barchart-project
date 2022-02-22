@@ -31,7 +31,7 @@
 #bar0.expanded:before {
   transform: scale(1, 10%);
   transform-origin: bottom;
-}
+} 
 #bar1 {
   position: relative;
 }
