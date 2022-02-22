@@ -2,17 +2,61 @@
 //options:  object that controls width and height of chart
 //elements: DOM or jQuery element the chart will be placed into
 
-const data = [
-  Math.floor(Math.random() * 100),
-  Math.floor(Math.random() * 100),
-  Math.floor(Math.random() * 100),
-  Math.floor(Math.random() * 100),
-  Math.floor(Math.random() * 100)];
+//empty array for submitted data into unput fields 
+let data = [];
+let display = {
 
+}
+
+let display = {
+  titleColor: "#b37313",
+  titleSize: "large",
+  scale: 20,
+  quantityDisplay: 'centre',
+}
 const options = {
   width: 100,
   height: 100
 }
+
+//chart input display
+document.getElementById("chartDisplay").onclick = function() {
+  let chartDisplay = {
+    titleColor: document.getElementById("titleColor").value,
+    titleSize: document.getElementById("titleSize").value,
+    scale: document.getElementById("inputScale").value,
+    quantityDisplay: document.getElementById("quantityDisplay").value
+  };
+  console.log(chartDisplay);
+  chartDisplay = display;
+}
+//chart input data 
+document.getElementById("chartData").onclick = function() {
+  let chartInput = {
+    label: document.getElementById("inputLabel").value,
+    labelColor: document.getElementById("inputLabelColor").value,
+    quantity: document.getElementById("inputQuantity").value,
+    barColor: document.getElementById("inputBarColor").value
+  };
+  data.push(chartInput);
+  console.log(chartInput);
+  console.log(data);
+}
+//fuction to clear input feilds
+const btnDisplay = document.getElementById("chartDisplay");
+btnDisplay.addEventListener("click", function(){
+  let inputs = document.querySelectorAll(".input");
+  inputs.forEach(input => {
+    input.value = '';
+  }); 
+});
+const button = document.getElementById("chartData");
+button.addEventListener("click", function(){
+  let input = document.querySelectorAll(".input");
+  input.forEach(item => {
+    item.value = "";
+  });
+});
 
 
 const barZero = document.getElementsByClassName("bar0");
