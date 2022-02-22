@@ -8,7 +8,7 @@ let display = {
 
 }
 
-let display = {
+let displayDetails = {
   titleColor: "#b37313",
   titleSize: "large",
   scale: 20,
@@ -27,8 +27,15 @@ document.getElementById("chartDisplay").onclick = function() {
     scale: document.getElementById("inputScale").value,
     quantityDisplay: document.getElementById("quantityDisplay").value
   };
+  const scaleDisplay = function() { 
+    for (let a = 0; a < scaleNum.length; a++){
+      document.getElementById(`scale${a}`).innerHTML = displayDetails.scale * (a + 1);
+    }
+  }
+
   console.log(chartDisplay);
-  chartDisplay = display;
+  displayDetails = chartDisplay; 
+  scaleDisplay();
 }
 //chart input data 
 document.getElementById("chartData").onclick = function() {
@@ -57,6 +64,15 @@ button.addEventListener("click", function(){
     item.value = "";
   });
 });
+
+const scaleNum = [document.getElementById("scale0"),
+document.getElementById("scale1"),
+document.getElementById("scale2"),
+document.getElementById("scale3"),
+document.getElementById("scale4")];
+
+
+
 
 
 const barZero = document.getElementsByClassName("bar0");
