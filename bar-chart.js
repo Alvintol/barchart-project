@@ -84,25 +84,36 @@ document.getElementById("chartData").onclick = function () {
     quantity: document.getElementById("inputQuantity").value,
     barColor: document.getElementById("inputBarColor").value
   };
+  const createLabel = function () {
+  let div = document.createElement("div");
+  div.id = `label${data.indexOf(chartInput)}`
+  div.classList = ' label column';
+  div.innerHTML = `${chartInput.label}`
+  
+  document.getElementById("flexBottom").appendChild(div);
+}
+//function that changes object label color based on user input
+  const labelColorChoice = function () {
+
+  } 
+//function that provides data quantity based on user input
+  const quantityNum = function () {
+
+  }
+// function that changes object bar color based on user input
+  const barColorChoice = function () {
+
+  }
+
   data.push(chartInput);
   console.log(chartInput);
   console.log(data);  
   createLabel();
-
-}
-//function that provides a label for object based on user input
-const createLabel = function () {
-
+  labelColorChoice();
+  quantityNum();
+  barColorChoice();
 }
 
-
-//function that changes object label color based on user input
-
-
-//function that provides data quantity based on user input
-
-
-// function that changes object bar color based on user input
 
 
 //function to clear display input fields
