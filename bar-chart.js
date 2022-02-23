@@ -26,6 +26,7 @@ const options = {
 //   console.log(elements);
 // }
 
+
 //function that changes chart display details
 document.getElementById("chartDisplay").onclick = function () {
   let chartDisplay = {
@@ -43,6 +44,7 @@ document.getElementById("chartDisplay").onclick = function () {
   scaleDisplay();
 }
 
+
 //function that changes title colors
 const titleColorChange = function () {
   const titles = [
@@ -54,8 +56,10 @@ const titleColorChange = function () {
   }
 };
 
+
 //function that changes title size
 const titleSizeChange = () => document.getElementById("title0").style.fontSize = displayDetails.titleSize;
+
 
 //function that changes scale units
 const scaleDisplay = function () {
@@ -69,13 +73,6 @@ const scaleDisplay = function () {
   }
 }
 
-/***********************
- * incomplete function
- */
-//function that changes quantity display position
-const quantityPosition = function () {
-
-}
 
 //function that chart that creates an object of input data 
 document.getElementById("chartData").onclick = function () {
@@ -93,6 +90,8 @@ document.getElementById("chartData").onclick = function () {
 
     document.getElementById("flexBottom").appendChild(div);
   }
+
+
   //function that creates a container for bar element in chart
   const createContainer = function () {
     let container = document.createElement("div");
@@ -103,10 +102,11 @@ document.getElementById("chartData").onclick = function () {
     container.style.display = 'flex';
     container.style.flexDirection = 'column';
     container.style.margin = `0 ${displayDetails.spacing}% -0.5% ${displayDetails.spacing}%`;
-    // container.innerHTML = `${chartInput.quantity}`
 
     document.getElementById("flexBox").appendChild(container);
-  }  
+  }
+
+
   //function that displays quantity of user data
   const quantityDisplay = function () {
     let quantityNum = document.createElement("div");
@@ -121,6 +121,8 @@ document.getElementById("chartData").onclick = function () {
 
     document.getElementById(`barContainer${data.indexOf(chartInput)}`).appendChild(quantityNum);
   }
+  
+
   //function that builds bar representing data with quantity number
   const createBar = function () {
     let bar = document.createElement("div");
@@ -129,6 +131,7 @@ document.getElementById("chartData").onclick = function () {
     bar.style.position = 'absolute';
     bar.style.width = '100%';
     let heightPercent = ((chartInput.quantity / (displayDetails.scale * 5))*100);
+    bar.style.maxHeight = "100%";
     bar.style.height = `${heightPercent}%`;
     bar.style.margin = '0 2px 0 2px';
     bar.style.bottom = '0';
@@ -139,6 +142,16 @@ document.getElementById("chartData").onclick = function () {
     document.getElementById(`barContainer${data.indexOf(chartInput)}`).appendChild(bar);
   }
 
+
+  //function that updates delete list with new object
+  const delUpdate = function () {
+    let del = document.createElement("option");
+    del.value = `${chartInput.label}`;
+    del.innerHTML = `${chartInput.label}`;
+    
+    document.querySelector(`#deleteSelector`).appendChild(del);
+  }
+
   data.push(chartInput);
   console.log(chartInput);
   console.log(data);
@@ -146,8 +159,8 @@ document.getElementById("chartData").onclick = function () {
   createContainer();
   createBar();
   quantityDisplay();
+  delUpdate();
 }
-
 
 
 //function to clear display input fields
@@ -158,6 +171,8 @@ btnDisplay.addEventListener("click", function () {
     input.value = '';
   });
 });
+
+
 //second submit button
 const button = document.getElementById("chartData");
 button.addEventListener("click", function () {
@@ -166,3 +181,15 @@ button.addEventListener("click", function () {
     item.value = "";
   });
 });
+
+
+// //function that deletes user input
+// const delButton = document.querySelector('#deleteData');
+// delButton.addEventListener("click", function () {
+//   // let toDelete = 
+// });
+
+
+//function that resets page
+const resetButton = document.querySelector('#resetButton');
+resetButton.addEventListener("click", function () {location.reload()})
