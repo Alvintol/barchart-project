@@ -13,7 +13,7 @@ let displayDetails = {
   titleSize: "large",
   scale: 20,
   spacing: '1',
-  quantityDisplay: 'centre',
+  quantityDisplay: '50%',
 }
 const options = {
   width: 100,
@@ -98,27 +98,43 @@ document.getElementById("chartData").onclick = function () {
     let container = document.createElement("div");
     container.id = `barContainer${data.indexOf(chartInput)}`;
     container.classList = 'container column';
-    container.innerHTML = `${chartInput.quantity}`;
+    container.style.position = 'relative';
     container.style.textAlign = 'center';
     container.style.display = 'flex';
     container.style.flexDirection = 'column';
     container.style.margin = `0 ${displayDetails.spacing}% -0.5% ${displayDetails.spacing}%`;
-    
+    // container.innerHTML = `${chartInput.quantity}`
 
     document.getElementById("flexBox").appendChild(container);
+  }  
+  //function that displays quantity of user data
+  const quantityDisplay = function () {
+    let quantityNum = document.createElement("div");
+    quantityNum.id = `quantity${data.indexOf(chartInput)}`;
+    quantityNum.classList = "display"; 
+    quantityNum.style.textAlign = 'center';
+    quantityNum.style.position = 'absolute';
+    quantityNum.style.width = '100%';
+    quantityNum.style.bottom = `${displayDetails.quantityDisplay}`
+    quantityNum.style.zIndex = '2';
+    quantityNum.innerHTML = `${chartInput.quantity}`; 
+
+    document.getElementById(`barContainer${data.indexOf(chartInput)}`).appendChild(quantityNum);
   }
   //function that builds bar representing data with quantity number
   const createBar = function () {
     let bar = document.createElement("div");
     bar.id = `bar${data.indexOf(chartInput)}`;
     bar.classList = 'column bar';
-    bar.style.position = 'relative';
+    bar.style.position = 'absolute';
     bar.style.width = '100%';
-    bar.style.height = '100%';
+    let heightPercent = ((chartInput.quantity / (displayDetails.scale * 5))*100);
+    bar.style.height = `${heightPercent}%`;
+    bar.style.margin = '0 2px 0 2px';
+    bar.style.bottom = '0';
+    bar.style.zIndex = '1';
     bar.style.background = `${chartInput.barColor}`;
     bar.style.transformOrigin = 'bottom';
-    let scalePercent = chartInput.quantity / (displayDetails.scale * 5) ;
-    bar.style.transform = `scale(1, ${scalePercent})`
 
     document.getElementById(`barContainer${data.indexOf(chartInput)}`).appendChild(bar);
   }
@@ -129,7 +145,7 @@ document.getElementById("chartData").onclick = function () {
   createLabel();
   createContainer();
   createBar();
-
+  quantityDisplay();
 }
 
 

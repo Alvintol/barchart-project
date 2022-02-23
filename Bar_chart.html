@@ -25,14 +25,8 @@
               <div id="scale3" class="scale row">3-</div>
               <div id="scale4" class="scale row">4-</div>
             </div>
-          </div>
+          </div>     
           <div id="flexBox" class="container column">
-<!--Data placeholders for visuals  -->
-            <!-- <div id="bar0" class="column bar">1</div>
-            <div id="bar1" class="column bar">2</div>
-            <div id="bar2" class="column bar">3</div>
-            <div id="bar3" class="column bar">4</div>
-            <div id="bar4" class="column bar">5</div> -->
           </div>
         </div>
 
@@ -41,12 +35,6 @@
           <div id="bottomBar" class="axis row">
             <div id="corner" class="column"></div>
             <div id="flexBottom" class="container labal">
-<!--Data placeholders for visuals  -->
-              <!-- <div id="label0" class="label column">1</div>
-              <div id="label1" class="label column">2</div>
-              <div id="label2" class="label column">3</div>
-              <div id="label3" class="label column">4</div>
-              <div id="label4" class="label column">5</div> -->
             </div>
           </div>
           <h2 id="title2" class="userAccess axisY" contenteditable="true">Y-Axis</h2>
@@ -78,7 +66,7 @@
             <option value="x-large">xLarge</option>
             <option value="xx-large">2xLarge</option>
           </select>
-          <input id="inputScale" class="input" type="number" placeholder="Scale by: Number">
+          <input id="inputScale" class="input" min="1" type="number" placeholder="Scale by: Number">
           <select id="barSpacing" class="input" name="barSpacing">
             <option value="" disabled selected>Bar Spacing</option>
             <option value="0">1</option>
@@ -90,9 +78,9 @@
           </select>
           <select id="quantityDisplay" class="input" name="quantityDisplay">
             <option value="" disabled selected>Quantity Display</option>
-            <option value="centre">Centre</option>
-            <option value="top">Top</option>
-            <option value="bottom">Bottom</option>
+            <option value="50%">Centre</option>
+            <option value="98%">Top</option>
+            <option value="2%">Bottom</option>
           <input id="chartDisplay" class="button" type="button" value="Submit">
         </div>
         <div id="chartInfo" class="input">
@@ -108,7 +96,7 @@
             <option value="black">Black</option>
             <option value="white">White</option>
             <option value="gray">Gray</option>
-          <input id="inputQuantity" class="input" type="number" placeholder="Quantity" required>
+          <input id="inputQuantity" class="input" type="number" min="0" max="" placeholder="Quantity" required>
           <select id="inputBarColor" class="input" name="colors" required>
             <option value="" disabled selected>Bar Color</option>
             <option value="red">Red</option>
@@ -117,7 +105,6 @@
             <option value="green">Green</option>
             <option value="blue">Blue</option>
             <option value="purple">Purple</option>
-            <option value="black">Black</option>
             <option value="white">White</option>
             <option value="gray">Gray</option>
             <input id="chartData" class="button" type="button" value="Submit">
