@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="Main.css" />
-    <link rel="stylesheet" href="adjustable.css">
     <link rel="config" href=".editorconfig" />
     <title>Bar Chart Project</title>
     <h1 id="title0" class="userAccess" contenteditable="true">Bar Chart Project</h1>
   </head>
   <hr />
-  <main class="container">
+
+  <main id="barChart" class="container">
     <body>
 <!-- bar chart container with border-->
       <section id="chart" class="column">
@@ -108,12 +108,6 @@
             <option value="white">White</option>
             <option value="gray">Gray</option>
             <input id="chartData" class="button" type="button" value="Submit">
-          </div>
-          <div id="delete" class="input">
-            <select id="deleteSelector" name="delete" class="input">
-              <option value="" disabled selected>Delete Data</option>
-            </select>
-            <input id="deleteData" class="button" type="button" value="Delete">
           </div>
           <div id="reset" class="input">
             <input id="resetButton" class="button" type="button" value="Page Reset">

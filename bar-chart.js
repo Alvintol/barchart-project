@@ -4,9 +4,6 @@
 
 //empty array for submitted data into unput fields 
 let data = [];
-let display = {
-
-}
 
 let displayDetails = {
   titleColor: "#b37313",
@@ -15,17 +12,18 @@ let displayDetails = {
   spacing: '1',
   quantityDisplay: '50%',
 }
-const options = {
-  width: 100,
-  height: 100
+let options = {
+  width: '100%',
+  height: '100%'
 }
 
-// function drawBarChart(data, options, elements) {
-//   console.log(data);
-//   console.log(options);
-//   console.log(elements);
-// }
 
+console.log(options);
+
+function drawBarChart(data, options, elements) {
+
+  
+}
 
 //function that changes chart display details
 document.getElementById("chartDisplay").onclick = function () {
@@ -85,7 +83,7 @@ document.getElementById("chartData").onclick = function () {
   const createLabel = function () {
     let div = document.createElement("div");
     div.id = `label${data.indexOf(chartInput)}`;
-    div.classList = 'label column';
+    div.classList = `label column bar${data.indexOf(chartInput)}`;
     div.innerHTML = `${chartInput.label}`;
 
     document.getElementById("flexBottom").appendChild(div);
@@ -96,7 +94,7 @@ document.getElementById("chartData").onclick = function () {
   const createContainer = function () {
     let container = document.createElement("div");
     container.id = `barContainer${data.indexOf(chartInput)}`;
-    container.classList = 'container column';
+    container.classList = `container column bar${data.indexOf(chartInput)}`;
     container.style.position = 'relative';
     container.style.textAlign = 'center';
     container.style.display = 'flex';
@@ -111,7 +109,7 @@ document.getElementById("chartData").onclick = function () {
   const quantityDisplay = function () {
     let quantityNum = document.createElement("div");
     quantityNum.id = `quantity${data.indexOf(chartInput)}`;
-    quantityNum.classList = "display"; 
+    quantityNum.classList = `display bar${data.indexOf(chartInput)}`; 
     quantityNum.style.textAlign = 'center';
     quantityNum.style.position = 'absolute';
     quantityNum.style.width = '100%';
@@ -127,7 +125,7 @@ document.getElementById("chartData").onclick = function () {
   const createBar = function () {
     let bar = document.createElement("div");
     bar.id = `bar${data.indexOf(chartInput)}`;
-    bar.classList = 'column bar';
+    bar.classList = `column bar${data.indexOf(chartInput)}`;
     bar.style.position = 'absolute';
     bar.style.width = '100%';
     let heightPercent = ((chartInput.quantity / (displayDetails.scale * 5))*100);
@@ -159,7 +157,6 @@ document.getElementById("chartData").onclick = function () {
   createContainer();
   createBar();
   quantityDisplay();
-  delUpdate();
 }
 
 
@@ -181,14 +178,6 @@ button.addEventListener("click", function () {
     item.value = "";
   });
 });
-
-
-// //function that deletes user input
-// const delButton = document.querySelector('#deleteData');
-// delButton.addEventListener("click", function () {
-//   // let toDelete = 
-// });
-
 
 //function that resets page
 const resetButton = document.querySelector('#resetButton');
