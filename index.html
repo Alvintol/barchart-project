@@ -4,16 +4,19 @@
     <link rel="stylesheet" href="Main.css" />
     <link rel="config" href=".editorconfig" />
     <title>Bar Chart Project</title>
-    <h1 id="title0" class="userAccess" contenteditable="true">Bar Chart Project</h1>
   </head>
-  <hr />
 
-  <main id="barChart" class="container">
+
+  <main>
     <body>
-<!-- bar chart container with border-->
+      <div id="barChart">
+      <!-- <div id="chartBox" class="container">**
+bar chart container with border
+      <header>
+        <h1 id="title0" class="userAccess" contenteditable="true">Bar Chart Project</h1>
+      </header>
       <section id="chart" class="column">
-<!-- container for X-Axis -->
-        <div class="row">
+        <div id='chartRow' class="row">
           <div id="axisX" class="axis column">
             <h2 id="title1" class="userAccess" contenteditable="true">X-Axis</h2>
           </div>
@@ -29,9 +32,7 @@
           <div id="flexBox" class="container column">
           </div>
         </div>
-
-<!-- container for Y-Axis -->
-        <div class="column">
+        <div id="chartColumn" class="column">
           <div id="bottomBar" class="axis row">
             <div id="corner" class="column"></div>
             <div id="flexBottom" class="container labal">
@@ -40,7 +41,7 @@
           <h2 id="title2" class="userAccess axisY" contenteditable="true">Y-Axis</h2>
         </div>
       </section> 
-<!-- user input -->
+user input
       <section id="userInput">
         <div id="chartInput" class="input">
           <select name="titleColor" id="titleColor" class="input">
@@ -107,15 +108,23 @@
             <option value="purple">Purple</option>
             <option value="white">White</option>
             <option value="gray">Gray</option>
-            <input id="chartData" class="button" type="button" value="Submit">
+          <input id="chartData" class="button" type="button" value="Submit">
           </div>
           <div id="reset" class="input">
-            <input id="resetButton" class="button" type="button" value="Page Reset">
+            <input id="resetButton" class="button" type="button" value="Reset">
           </div>
       </section>
+      </div> -->
+      </div>
     </body>
   </main>
   <footer>Alvin Tolentino</footer>
   <script src="bar-chart.js"></script>
+  <script src="jQuery.js"></script>
+  <script>
+    $(document).ready(function() {
+          drawBarChart(data, options, elements);
+        });
+  </script>
   <script rel="lint" href=".eslintrc.js"></script>
 </html>
