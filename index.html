@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="Main.css" />
+    <link rel="stylesheet" href="main.css" />
     <link rel="config" href=".editorconfig" />
     <title>Bar Chart Project</title>
   </head>
@@ -9,121 +9,16 @@
 
   <main>
     <body>
-      <div id="barChart">
-      <!-- <div id="chartBox" class="container">**
-bar chart container with border
-      <header>
-        <h1 id="title0" class="userAccess" contenteditable="true">Bar Chart Project</h1>
-      </header>
-      <section id="chart" class="column">
-        <div id='chartRow' class="row">
-          <div id="axisX" class="axis column">
-            <h2 id="title1" class="userAccess" contenteditable="true">X-Axis</h2>
-          </div>
-          <div id="leftBar" class="left">
-            <div id="flexLeft" class="container row">
-              <div id="scale0" class="scale row">0-</div>
-              <div id="scale1" class="scale row">1-</div>
-              <div id="scale2" class="scale row">2-</div>
-              <div id="scale3" class="scale row">3-</div>
-              <div id="scale4" class="scale row">4-</div>
-            </div>
-          </div>     
-          <div id="flexBox" class="container column">
-          </div>
-        </div>
-        <div id="chartColumn" class="column">
-          <div id="bottomBar" class="axis row">
-            <div id="corner" class="column"></div>
-            <div id="flexBottom" class="container labal">
-            </div>
-          </div>
-          <h2 id="title2" class="userAccess axisY" contenteditable="true">Y-Axis</h2>
-        </div>
-      </section> 
-user input
-      <section id="userInput">
-        <div id="chartInput" class="input">
-          <select name="titleColor" id="titleColor" class="input">
-            <option value="" disabled selected>Title Color</option>
-            <option value="#b37313">Default</option>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Yellow</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="purple">Purple</option>
-            <option value="black">Black</option>
-            <option value="white">White</option>
-            <option value="gray">Gray</option>
-            </select>
-          <select name="titleSize" id="titleSize" class="input">
-            <option value="" disabled selected>Title Size</option>
-            <option value="xx-small">2xSmall</option>
-            <option value="x-small">xSmall</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-            <option value="x-large">xLarge</option>
-            <option value="xx-large">2xLarge</option>
-          </select>
-          <input id="inputScale" class="input" min="1" type="number" placeholder="Scale by: Number">
-          <select id="barSpacing" class="input" name="barSpacing">
-            <option value="" disabled selected>Bar Spacing</option>
-            <option value="0">1</option>
-            <option value="2">2</option>
-            <option value="4">3</option>
-            <option value="6">4</option>
-            <option value="8">5</option>
-            <option value="10">6</option>
-          </select>
-          <select id="quantityDisplay" class="input" name="quantityDisplay">
-            <option value="" disabled selected>Quantity Display</option>
-            <option value="50%">Centre</option>
-            <option value="98%">Top</option>
-            <option value="2%">Bottom</option>
-          <input id="chartDisplay" class="button" type="button" value="Submit">
-        </div>
-        <div id="chartInfo" class="input">
-          <input id="inputLabel" class="input" type="text" placeholder="Label" required>
-          <select id="inputLabelColor" class="input" name="labelColor" required>
-            <option value="" disabled selected>Label Color</option>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Yellow</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="purple">Purple</option>
-            <option value="black">Black</option>
-            <option value="white">White</option>
-            <option value="gray">Gray</option>
-          <input id="inputQuantity" class="input" type="number" min="0" max="" placeholder="Quantity" required>
-          <select id="inputBarColor" class="input" name="colors" required>
-            <option value="" disabled selected>Bar Color</option>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Yellow</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="purple">Purple</option>
-            <option value="white">White</option>
-            <option value="gray">Gray</option>
-          <input id="chartData" class="button" type="button" value="Submit">
-          </div>
-          <div id="reset" class="input">
-            <input id="resetButton" class="button" type="button" value="Reset">
-          </div>
-      </section>
-      </div> -->
+      <div id="barChart">    
       </div>
     </body>
   </main>
   <footer>Alvin Tolentino</footer>
-  <script src="bar-chart.js"></script>
+  <script src="main.js"></script>
   <script src="jQuery.js"></script>
   <script>
     $(document).ready(function() {
-          drawBarChart(data, options, elements);
+          drawBarChart();
         });
   </script>
   <script rel="lint" href=".eslintrc.js"></script>
