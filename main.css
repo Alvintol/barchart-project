@@ -152,7 +152,11 @@ button {
   height: auto;  /* background-color: green; */
 }
 .input {
-  margin: 1%;
+  margin: 1% 1% 0 1%;
+  text-align: center;
+}
+.inputBar {
+  margin: 0 1% 0 1%;
   text-align: center;
 }
 footer {
