@@ -14,7 +14,8 @@ let options = {
   height: '750px'
 }
 let elements = document.querySelector('#barChart');
-
+let addCount = 0;
+let dataCount = 0;
 
 function drawBarChart(data, options, elements) {
 
@@ -178,37 +179,67 @@ const inputSectionBuild = function () {
 
   //data UI
 
-  const chartInfo = document.createElement('div');
-  chartInfo.id = `chartInfo`;
-  chartInfo.classList = 'input barContainer';
+  const chartInfo0 = document.createElement('div');
+  chartInfo0.id = `chartInfo0`;
+  chartInfo0.classList = 'inputBar input0 barContainer';
 
-  const inputLabel = document.createElement('input');
-  inputLabel.id = `inputLabel`;
-  inputLabel.classList = 'input';
-  inputLabel.type = 'text';
-  inputLabel.placeholder = 'Bar Title';
+  const inputLabel0 = document.createElement('input');
+  inputLabel0.id = `inputLabel0`;
+  inputLabel0.classList = 'inputBar input0';
+  inputLabel0.type = 'text';
+  inputLabel0.placeholder = 'Bar Title';
 
-  const labelColor = document.createElement('select');
-  labelColor.id = `labelColor`;
-  labelColor.classList = 'input';
-  labelColor.name = 'labelColor';
+  const labelColor0 = document.createElement('select');
+  labelColor0.id = `labelColor0`;
+  labelColor0.classList = 'inputBar input0';
+  labelColor0.name = 'labelColor';
 
-  const inputQuantity = document.createElement('input');
-  inputQuantity.id = `inputQuantity`;
-  inputQuantity.classList = 'input';
-  inputQuantity.type = "number";
-  inputQuantity.min = "0";
-  inputQuantity.placeholder = "Quantity";
+  const inputQuantity0 = document.createElement('input');
+  inputQuantity0.id = `inputQuantity0`;
+  inputQuantity0.classList = 'inputBar input0';
+  inputQuantity0.type = "number";
+  inputQuantity0.min = "0";
+  inputQuantity0.placeholder = "Quantity";
 
-  const barColor = document.createElement('select');
-  barColor.id = `barColor`;
-  barColor.classList = 'input';
-  barColor.name = 'barColor';
+  const barColor0 = document.createElement('select');
+  barColor0.id = `barColor0`;
+  barColor0.classList = 'inputBar input0';
+  barColor0.name = 'barColor';
+
+  const chartInfo1 = document.createElement('div');
+  chartInfo1.id = `chartInfo1`;
+  chartInfo1.classList = 'inputBar barContainer input1';
+  chartInfo1.innerHTML = '2nd Value';
+  chartInfo1.style.color = 'rgba(240, 240, 260, 0.8)';
+  chartInfo1.style.display = 'none';
+
+  const inputLabel1 = document.createElement('input');
+  inputLabel1.id = `inputLabel1`;
+  inputLabel1.classList = 'inputBar input1';
+  inputLabel1.type = 'text';
+  inputLabel1.placeholder = 'Bar Title';
+
+  const labelColor1 = document.createElement('select');
+  labelColor1.id = `labelColor1`;
+  labelColor1.classList = 'inputBar input1';
+  labelColor1.name = 'labelColor';
+
+  const inputQuantity1 = document.createElement('input');
+  inputQuantity1.id = `inputQuantity1`;
+  inputQuantity1.classList = 'inputBar input1';
+  inputQuantity1.type = "number";
+  inputQuantity1.min = "0";
+  inputQuantity1.placeholder = "Quantity";
+
+  const barColor1 = document.createElement('select');
+  barColor1.id = `barColor1`;
+  barColor1.classList = 'inputBar input1';
+  barColor1.name = 'barColor';
 
   const chartInfo2 = document.createElement('div');
   chartInfo2.id = `chartInfo2`;
   chartInfo2.classList = 'inputBar barContainer input2';
-  chartInfo2.innerHTML = '2nd Value';
+  chartInfo2.innerHTML = '3rd Value';
   chartInfo2.style.color = 'rgba(240, 240, 260, 0.8)';
   chartInfo2.style.display = 'none';
 
@@ -234,36 +265,6 @@ const inputSectionBuild = function () {
   barColor2.id = `barColor2`;
   barColor2.classList = 'inputBar input2';
   barColor2.name = 'barColor';
-
-  const chartInfo3 = document.createElement('div');
-  chartInfo3.id = `chartInfo3`;
-  chartInfo3.classList = 'inputBar barContainer input3';
-  chartInfo3.innerHTML = '3rd Value';
-  chartInfo3.style.color = 'rgba(240, 240, 260, 0.8)';
-  chartInfo3.style.display = 'none';
-
-  const inputLabel3 = document.createElement('input');
-  inputLabel3.id = `inputLabel3`;
-  inputLabel3.classList = 'inputBar input3';
-  inputLabel3.type = 'text';
-  inputLabel3.placeholder = 'Bar Title';
-
-  const labelColor3 = document.createElement('select');
-  labelColor3.id = `labelColor3`;
-  labelColor3.classList = 'inputBar input3';
-  labelColor3.name = 'labelColor';
-
-  const inputQuantity3 = document.createElement('input');
-  inputQuantity3.id = `inputQuantity3`;
-  inputQuantity3.classList = 'inputBar input3';
-  inputQuantity3.type = "number";
-  inputQuantity3.min = "0";
-  inputQuantity3.placeholder = "Quantity";
-
-  const barColor3 = document.createElement('select');
-  barColor3.id = `barColor3`;
-  barColor3.classList = 'inputBar input3';
-  barColor3.name = 'barColor';
 
   const chartDataBtn = document.createElement('input');
   chartDataBtn.id = 'chartDataBtn';
@@ -318,24 +319,24 @@ const inputSectionBuild = function () {
   document.querySelector('#chartInput').appendChild(barSpacing);
   document.querySelector('#chartInput').appendChild(quantityDisplay);
   document.querySelector('#chartInput').appendChild(chartDisplay);
-  document.querySelector('#userInput').appendChild(chartInfo);
-  document.querySelector(`#chartInfo`).appendChild(inputLabel);
-  document.querySelector(`#chartInfo`).appendChild(labelColor);
-  document.querySelector(`#chartInfo`).appendChild(inputQuantity);
-  document.querySelector(`#chartInfo`).appendChild(barColor);
+  document.querySelector('#userInput').appendChild(chartInfo0);
+  document.querySelector(`#chartInfo0`).appendChild(inputLabel0);
+  document.querySelector(`#chartInfo0`).appendChild(labelColor0);
+  document.querySelector(`#chartInfo0`).appendChild(inputQuantity0);
+  document.querySelector(`#chartInfo0`).appendChild(barColor0);
+  document.querySelector('#userInput').appendChild(chartInfo1);
+  document.querySelector(`#chartInfo1`).appendChild(inputLabel1);
+  document.querySelector(`#chartInfo1`).appendChild(labelColor1);
+  document.querySelector(`#chartInfo1`).appendChild(inputQuantity1);
+  document.querySelector(`#chartInfo1`).appendChild(barColor1);
+  document.querySelector(`#chartInfo0`).appendChild(chartDataBtn);
   document.querySelector('#userInput').appendChild(chartInfo2);
   document.querySelector(`#chartInfo2`).appendChild(inputLabel2);
   document.querySelector(`#chartInfo2`).appendChild(labelColor2);
   document.querySelector(`#chartInfo2`).appendChild(inputQuantity2);
   document.querySelector(`#chartInfo2`).appendChild(barColor2);
-  document.querySelector(`#chartInfo`).appendChild(chartDataBtn);
-  document.querySelector('#userInput').appendChild(chartInfo3);
-  document.querySelector(`#chartInfo3`).appendChild(inputLabel3);
-  document.querySelector(`#chartInfo3`).appendChild(labelColor3);
-  document.querySelector(`#chartInfo3`).appendChild(inputQuantity3);
-  document.querySelector(`#chartInfo3`).appendChild(barColor3);
-  document.querySelector(`#chartInfo`).appendChild(chartDataBtn);
-  document.querySelector(`#chartInfo`).appendChild(addBtn);
+  document.querySelector(`#chartInfo0`).appendChild(chartDataBtn);
+  document.querySelector(`#chartInfo0`).appendChild(addBtn);
   document.querySelector('#chartBox').appendChild(chartReset);
   document.querySelector('#chartReset').appendChild(buttonReset);
   document.querySelector('#chart').appendChild(showHide);
@@ -471,92 +472,177 @@ const inputSectionBuild = function () {
     document.querySelector('#quantityDisplay').appendChild(quantityDisplayList3)
   }
 
-  const labelColorList = function () {
+  const labelColorListA = function () {
     const labelColorList0 = document.createElement('option');
     labelColorList0.value = '';
     labelColorList0.disabled = 'true';
     labelColorList0.selected = 'true';
     labelColorList0.innerHTML = 'Title Color';
-    document.querySelector(`#labelColor`).appendChild(labelColorList0)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList0)
     const labelColorList1 = document.createElement('option');
     labelColorList1.value = 'red';
     labelColorList1.innerHTML = 'Red';
-    document.querySelector(`#labelColor`).appendChild(labelColorList1)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList1)
     const labelColorList2 = document.createElement('option');
     labelColorList2.value = 'orange';
     labelColorList2.innerHTML = 'Orange';
-    document.querySelector(`#labelColor`).appendChild(labelColorList2)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList2)
     const labelColorList3 = document.createElement('option');
     labelColorList3.value = 'yellow';
     labelColorList3.innerHTML = 'Yellow';
-    document.querySelector(`#labelColor`).appendChild(labelColorList3)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList3)
     const labelColorList4 = document.createElement('option');
     labelColorList4.value = 'Green';
     labelColorList4.innerHTML = 'Green';
-    document.querySelector(`#labelColor`).appendChild(labelColorList4)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList4)
     const labelColorList5 = document.createElement('option');
     labelColorList5.value = 'Blue';
     labelColorList5.innerHTML = 'Blue';
-    document.querySelector(`#labelColor`).appendChild(labelColorList5)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList5)
     const labelColorList6 = document.createElement('option');
     labelColorList6.value = 'Purple';
     labelColorList6.innerHTML = 'Purple';
-    document.querySelector(`#labelColor`).appendChild(labelColorList6)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList6)
     const labelColorList7 = document.createElement('option');
     labelColorList7.value = 'White';
     labelColorList7.innerHTML = 'White';
-    document.querySelector(`#labelColor`).appendChild(labelColorList7)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList7)
     const labelColorList8 = document.createElement('option');
     labelColorList8.value = 'Gray';
     labelColorList8.innerHTML = 'Gray';
-    document.querySelector(`#labelColor`).appendChild(labelColorList8)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList8)
     const labelColorList9 = document.createElement('option');
     labelColorList9.value = 'Black';
     labelColorList9.innerHTML = 'Black';
-    document.querySelector(`#labelColor`).appendChild(labelColorList9)
+    document.querySelector(`#labelColor0`).appendChild(labelColorList9)
   }
 
-  const barColorList = function () {
+  const barColorListA = function () {
     const barColorList0 = document.createElement('option');
     barColorList0.value = '';
     barColorList0.disabled = 'true';
     barColorList0.selected = 'true';
     barColorList0.innerHTML = 'Bar Color';
-    document.querySelector(`#barColor`).appendChild(barColorList0)
+    document.querySelector(`#barColor0`).appendChild(barColorList0)
     const barColorList1 = document.createElement('option');
     barColorList1.value = 'red';
     barColorList1.innerHTML = 'Red';
-    document.querySelector(`#barColor`).appendChild(barColorList1)
+    document.querySelector(`#barColor0`).appendChild(barColorList1)
     const barColorList2 = document.createElement('option');
     barColorList2.value = 'orange';
     barColorList2.innerHTML = 'Orange';
-    document.querySelector(`#barColor`).appendChild(barColorList2)
+    document.querySelector(`#barColor0`).appendChild(barColorList2)
     const barColorList3 = document.createElement('option');
     barColorList3.value = 'yellow';
     barColorList3.innerHTML = 'Yellow';
-    document.querySelector(`#barColor`).appendChild(barColorList3)
+    document.querySelector(`#barColor0`).appendChild(barColorList3)
     const barColorList4 = document.createElement('option');
     barColorList4.value = 'Green';
     barColorList4.innerHTML = 'Green';
-    document.querySelector(`#barColor`).appendChild(barColorList4)
+    document.querySelector(`#barColor0`).appendChild(barColorList4)
     const barColorList5 = document.createElement('option');
     barColorList5.value = 'Blue';
     barColorList5.innerHTML = 'Blue';
-    document.querySelector(`#barColor`).appendChild(barColorList5)
+    document.querySelector(`#barColor0`).appendChild(barColorList5)
     const barColorList6 = document.createElement('option');
     barColorList6.value = 'Purple';
     barColorList6.innerHTML = 'Purple';
-    document.querySelector(`#barColor`).appendChild(barColorList6)
+    document.querySelector(`#barColor0`).appendChild(barColorList6)
     const barColorList7 = document.createElement('option');
     barColorList7.value = 'White';
     barColorList7.innerHTML = 'White';
-    document.querySelector(`#barColor`).appendChild(barColorList7)
+    document.querySelector(`#barColor0`).appendChild(barColorList7)
     const barColorList8 = document.createElement('option');
     barColorList8.value = 'Gray';
     barColorList8.innerHTML = 'Gray';
-    document.querySelector(`#barColor`).appendChild(barColorList8)
+    document.querySelector(`#barColor0`).appendChild(barColorList8)
   }
-  const labelColorList2 = function () {
+  const labelColorListB = function () {
+    const labelColorList0 = document.createElement('option');
+    labelColorList0.value = '';
+    labelColorList0.disabled = 'true';
+    labelColorList0.selected = 'true';
+    labelColorList0.innerHTML = 'Title Color';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList0)
+    const labelColorList1 = document.createElement('option');
+    labelColorList1.value = 'red';
+    labelColorList1.innerHTML = 'Red';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList1)
+    const labelColorList2 = document.createElement('option');
+    labelColorList2.value = 'orange';
+    labelColorList2.innerHTML = 'Orange';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList2)
+    const labelColorList3 = document.createElement('option');
+    labelColorList3.value = 'yellow';
+    labelColorList3.innerHTML = 'Yellow';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList3)
+    const labelColorList4 = document.createElement('option');
+    labelColorList4.value = 'Green';
+    labelColorList4.innerHTML = 'Green';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList4)
+    const labelColorList5 = document.createElement('option');
+    labelColorList5.value = 'Blue';
+    labelColorList5.innerHTML = 'Blue';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList5)
+    const labelColorList6 = document.createElement('option');
+    labelColorList6.value = 'Purple';
+    labelColorList6.innerHTML = 'Purple';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList6)
+    const labelColorList7 = document.createElement('option');
+    labelColorList7.value = 'White';
+    labelColorList7.innerHTML = 'White';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList7)
+    const labelColorList8 = document.createElement('option');
+    labelColorList8.value = 'Gray';
+    labelColorList8.innerHTML = 'Gray';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList8)
+    const labelColorList9 = document.createElement('option');
+    labelColorList9.value = 'Black';
+    labelColorList9.innerHTML = 'Black';
+    document.querySelector(`#labelColor1`).appendChild(labelColorList9)
+  }
+
+  const barColorListB = function () {
+    const barColorList0 = document.createElement('option');
+    barColorList0.value = '';
+    barColorList0.disabled = 'true';
+    barColorList0.selected = 'true';
+    barColorList0.innerHTML = 'Bar Color';
+    document.querySelector(`#barColor1`).appendChild(barColorList0)
+    const barColorList1 = document.createElement('option');
+    barColorList1.value = 'red';
+    barColorList1.innerHTML = 'Red';
+    document.querySelector(`#barColor1`).appendChild(barColorList1)
+    const barColorList2 = document.createElement('option');
+    barColorList2.value = 'orange';
+    barColorList2.innerHTML = 'Orange';
+    document.querySelector(`#barColor1`).appendChild(barColorList2)
+    const barColorList3 = document.createElement('option');
+    barColorList3.value = 'yellow';
+    barColorList3.innerHTML = 'Yellow';
+    document.querySelector(`#barColor1`).appendChild(barColorList3)
+    const barColorList4 = document.createElement('option');
+    barColorList4.value = 'Green';
+    barColorList4.innerHTML = 'Green';
+    document.querySelector(`#barColor1`).appendChild(barColorList4)
+    const barColorList5 = document.createElement('option');
+    barColorList5.value = 'Blue';
+    barColorList5.innerHTML = 'Blue';
+    document.querySelector(`#barColor1`).appendChild(barColorList5)
+    const barColorList6 = document.createElement('option');
+    barColorList6.value = 'Purple';
+    barColorList6.innerHTML = 'Purple';
+    document.querySelector(`#barColor1`).appendChild(barColorList6)
+    const barColorList7 = document.createElement('option');
+    barColorList7.value = 'White';
+    barColorList7.innerHTML = 'White';
+    document.querySelector(`#barColor1`).appendChild(barColorList7)
+    const barColorList8 = document.createElement('option');
+    barColorList8.value = 'Gray';
+    barColorList8.innerHTML = 'Gray';
+    document.querySelector(`#barColor1`).appendChild(barColorList8)
+  }
+  const labelColorListC = function () {
     const labelColorList0 = document.createElement('option');
     labelColorList0.value = '';
     labelColorList0.disabled = 'true';
@@ -601,7 +687,7 @@ const inputSectionBuild = function () {
     document.querySelector(`#labelColor2`).appendChild(labelColorList9)
   }
 
-  const barColorList2 = function () {
+  const barColorListC = function () {
     const barColorList0 = document.createElement('option');
     barColorList0.value = '';
     barColorList0.disabled = 'true';
@@ -641,101 +727,16 @@ const inputSectionBuild = function () {
     barColorList8.innerHTML = 'Gray';
     document.querySelector(`#barColor2`).appendChild(barColorList8)
   }
-  const labelColorList3 = function () {
-    const labelColorList0 = document.createElement('option');
-    labelColorList0.value = '';
-    labelColorList0.disabled = 'true';
-    labelColorList0.selected = 'true';
-    labelColorList0.innerHTML = 'Title Color';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList0)
-    const labelColorList1 = document.createElement('option');
-    labelColorList1.value = 'red';
-    labelColorList1.innerHTML = 'Red';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList1)
-    const labelColorList2 = document.createElement('option');
-    labelColorList2.value = 'orange';
-    labelColorList2.innerHTML = 'Orange';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList2)
-    const labelColorList3 = document.createElement('option');
-    labelColorList3.value = 'yellow';
-    labelColorList3.innerHTML = 'Yellow';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList3)
-    const labelColorList4 = document.createElement('option');
-    labelColorList4.value = 'Green';
-    labelColorList4.innerHTML = 'Green';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList4)
-    const labelColorList5 = document.createElement('option');
-    labelColorList5.value = 'Blue';
-    labelColorList5.innerHTML = 'Blue';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList5)
-    const labelColorList6 = document.createElement('option');
-    labelColorList6.value = 'Purple';
-    labelColorList6.innerHTML = 'Purple';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList6)
-    const labelColorList7 = document.createElement('option');
-    labelColorList7.value = 'White';
-    labelColorList7.innerHTML = 'White';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList7)
-    const labelColorList8 = document.createElement('option');
-    labelColorList8.value = 'Gray';
-    labelColorList8.innerHTML = 'Gray';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList8)
-    const labelColorList9 = document.createElement('option');
-    labelColorList9.value = 'Black';
-    labelColorList9.innerHTML = 'Black';
-    document.querySelector(`#labelColor3`).appendChild(labelColorList9)
-  }
-
-  const barColorList3 = function () {
-    const barColorList0 = document.createElement('option');
-    barColorList0.value = '';
-    barColorList0.disabled = 'true';
-    barColorList0.selected = 'true';
-    barColorList0.innerHTML = 'Bar Color';
-    document.querySelector(`#barColor3`).appendChild(barColorList0)
-    const barColorList1 = document.createElement('option');
-    barColorList1.value = 'red';
-    barColorList1.innerHTML = 'Red';
-    document.querySelector(`#barColor3`).appendChild(barColorList1)
-    const barColorList2 = document.createElement('option');
-    barColorList2.value = 'orange';
-    barColorList2.innerHTML = 'Orange';
-    document.querySelector(`#barColor3`).appendChild(barColorList2)
-    const barColorList3 = document.createElement('option');
-    barColorList3.value = 'yellow';
-    barColorList3.innerHTML = 'Yellow';
-    document.querySelector(`#barColor3`).appendChild(barColorList3)
-    const barColorList4 = document.createElement('option');
-    barColorList4.value = 'Green';
-    barColorList4.innerHTML = 'Green';
-    document.querySelector(`#barColor3`).appendChild(barColorList4)
-    const barColorList5 = document.createElement('option');
-    barColorList5.value = 'Blue';
-    barColorList5.innerHTML = 'Blue';
-    document.querySelector(`#barColor3`).appendChild(barColorList5)
-    const barColorList6 = document.createElement('option');
-    barColorList6.value = 'Purple';
-    barColorList6.innerHTML = 'Purple';
-    document.querySelector(`#barColor3`).appendChild(barColorList6)
-    const barColorList7 = document.createElement('option');
-    barColorList7.value = 'White';
-    barColorList7.innerHTML = 'White';
-    document.querySelector(`#barColor3`).appendChild(barColorList7)
-    const barColorList8 = document.createElement('option');
-    barColorList8.value = 'Gray';
-    barColorList8.innerHTML = 'Gray';
-    document.querySelector(`#barColor3`).appendChild(barColorList8)
-  }
   titleColorList();
   titleSizeList();
   barSpacingList();
   quantityDisplayList();
-  labelColorList();
-  labelColorList2();
-  labelColorList3();
-  barColorList();
-  barColorList2();
-  barColorList3();
+  labelColorListA();
+  labelColorListB();
+  labelColorListC();
+  barColorListA();
+  barColorListB();
+  barColorListC();
 
   //function that changes chart display details
   document.getElementById("chartDisplay").onclick = function () {
@@ -782,29 +783,45 @@ const inputSectionBuild = function () {
 
   //function that chart that creates an object of input data 
   document.getElementById("chartDataBtn").onclick = function () {
-    let chartInput = {
-      label: document.getElementById("inputLabel").value,
-      labelColor: document.getElementById("labelColor").value,
-      quantity: document.getElementById("inputQuantity").value,
-      barColor: document.getElementById("barColor").value
-    };
+    let chartInput = [
+      {
+        label: document.getElementById("inputLabel0").value,
+        labelColor: document.getElementById("labelColor0").value,
+        quantity: document.getElementById("inputQuantity0").value,
+        barColor: document.getElementById("barColor0").value
+      },
+      {
+        label: document.getElementById("inputLabel1").value,
+        labelColor: document.getElementById("labelColor1").value,
+        quantity: document.getElementById("inputQuantity1").value,
+        barColor: document.getElementById("barColor1").value
+      },
+      {
+        label: document.getElementById("inputLabel2").value,
+        labelColor: document.getElementById("labelColor2").value,
+        quantity: document.getElementById("inputQuantity2").value,
+        barColor: document.getElementById("barColor2").value
+      }
+    ];
+
     const createLabel = function () {
       let label = document.createElement("div");
-      label.id = `label${data.indexOf(chartInput)}`;
+      label.id = `label${dataCount}`;
       label.classList = `label column bar`;
-      label.innerHTML = `${chartInput.label}`;
-      label.style.color = `${chartInput.labelColor}`;
+      label.innerHTML = `${chartInput[0].label}`;
+      label.style.color = `${chartInput[0].labelColor}`;
       document.getElementById("flexBottom").appendChild(label);
     }
     //function that creates a container for bar element in chart
     const createContainer = function () {
       let container = document.createElement("div");
-      container.id = `barContainer${data.indexOf(chartInput)}`;
+      container.id = `barContainer${dataCount}`;
       container.classList = `container column bar`;
       container.style.position = 'relative';
       container.style.textAlign = 'center';
       container.style.display = 'flex';
       container.style.flexDirection = 'column';
+      container.style.justifyContent = 'end';
       container.style.margin = `0 ${displayDetails.spacing}% -0.5% ${displayDetails.spacing}%`;
 
       document.getElementById("flexBox").appendChild(container);
@@ -813,53 +830,196 @@ const inputSectionBuild = function () {
     //function that builds bar representing data with quantity number
     const createBar = function () {
       let bar = document.createElement("div");
-      bar.id = `bar${data.indexOf(chartInput)}`;
+      bar.id = `bar${dataCount}`;
       bar.classList = `column bar`;
-      bar.style.position = 'absolute';
+      bar.style.position = 'relative';
       bar.style.width = '100%';
-      let heightPercent = ((chartInput.quantity / (displayDetails.scale * 5)) * 100);
+      let heightPercent = ((chartInput[0].quantity / (displayDetails.scale * 5)) * 100);
       bar.style.maxHeight = "100%";
       bar.style.height = `${heightPercent}%`;
       bar.style.margin = '0 2px 0 2px';
       bar.style.bottom = '0';
       bar.style.zIndex = '1';
-      bar.style.background = `${chartInput.barColor}`;
+      bar.style.background = `${chartInput[0].barColor}`;
       bar.style.transformOrigin = 'bottom';
 
-      document.getElementById(`barContainer${data.indexOf(chartInput)}`).appendChild(bar);
+      document.getElementById(`barContainer${dataCount}`).appendChild(bar);
     }
+
 
     //function that displays quantity of user data
     const quantityDisplay = function () {
       let quantityNum = document.createElement("div");
-      quantityNum.id = `quantity${data.indexOf(chartInput)}`;
+      quantityNum.id = `quantity${dataCount}`;
       quantityNum.classList = `display bar`;
       quantityNum.style.textAlign = 'center';
       quantityNum.style.position = 'absolute';
       quantityNum.style.width = '100%';
       quantityNum.style.bottom = `${displayDetails.quantityDisplay}`
       quantityNum.style.zIndex = '2';
-      quantityNum.innerHTML = `${chartInput.quantity}`;
+      quantityNum.innerHTML = `${chartInput[0].quantity}`;
 
-      document.getElementById(`barContainer${data.indexOf(chartInput)}`).appendChild(quantityNum);
+      document.getElementById(`barContainer${dataCount}`).appendChild(quantityNum);
     }
-    data.push(chartInput);
-    console.log(chartInput);
-    console.log(data);
-    createLabel();
-    createContainer();
-    createBar();
-    quantityDisplay();
+    const createLabel1 = function () {
+      let label = document.createElement("div");
+      label.id = `label${dataCount}`;
+      label.classList = `label column bar`;
+      label.innerHTML = `${chartInput[1].label}`;
+      label.style.color = `${chartInput[1].labelColor}`;
+      document.getElementById("flexBottom").appendChild(label);
+    }
+
+    const createBar1 = function () {
+      let bar = document.createElement("div");
+      bar.id = `bar${dataCount}`;
+      bar.classList = `column bar`;
+      bar.style.position = 'relative';
+      bar.style.width = '100%';
+      let heightPercent = ((chartInput[1].quantity / (displayDetails.scale * 5)) * 100);
+      bar.style.maxHeight = "100%";
+      bar.style.height = `${heightPercent}%`;
+      bar.style.margin = '0 2px 0 2px';
+      bar.style.bottom = '0';
+      bar.style.zIndex = '1';
+      bar.style.background = `${chartInput[1].barColor}`;
+      bar.style.transformOrigin = 'bottom';
+
+      document.getElementById(`barContainer${dataCount}`).appendChild(bar);
+    }
+
+
+    const quantityDisplay1 = function () {
+      let quantityNum = document.createElement("div");
+      quantityNum.id = `quantity${dataCount}`;
+      quantityNum.classList = `display bar`;
+      quantityNum.style.textAlign = 'center';
+      quantityNum.style.position = 'absolute';
+      quantityNum.style.width = '100%';
+      quantityNum.style.bottom = `${displayDetails.quantityDisplay}`
+      quantityNum.style.zIndex = '2';
+      quantityNum.innerHTML = `${chartInput[1].quantity}`;
+
+      document.getElementById(`barContainer${dataCount}`).appendChild(quantityNum);
+    }
+    const createLabel2 = function () {
+      let label = document.createElement("div");
+      label.id = `label${dataCount}`;
+      label.classList = `label column bar`;
+      label.innerHTML = `${chartInput[1].label}`;
+      label.style.color = `${chartInput[1].labelColor}`;
+      document.getElementById("flexBottom").appendChild(label);
+    }
+
+    const createBar2 = function () {
+      let bar = document.createElement("div");
+      bar.id = `bar${dataCount}`;
+      bar.classList = `column bar`;
+      bar.style.position = 'relative';
+      bar.style.width = '100%';
+      let heightPercent = ((chartInput[2].quantity / (displayDetails.scale * 5)) * 100);
+      bar.style.maxHeight = "100%";
+      bar.style.height = `${heightPercent}%`;
+      bar.style.margin = '0 2px 0 2px';
+      bar.style.bottom = '0';
+      bar.style.zIndex = '1';
+      bar.style.background = `${chartInput[2].barColor}`;
+      bar.style.transformOrigin = 'bottom';
+
+      document.getElementById(`barContainer${dataCount}`).appendChild(bar);
+    }
+
+
+    //function that displays quantity of user data
+    const quantityDisplay2 = function () {
+      let quantityNum = document.createElement("div");
+      quantityNum.id = `quantity${dataCount}`;
+      quantityNum.classList = `display bar`;
+      quantityNum.style.textAlign = 'center';
+      quantityNum.style.position = 'absolute';
+      quantityNum.style.width = '100%';
+      quantityNum.style.bottom = `${displayDetails.quantityDisplay}`
+      quantityNum.style.zIndex = '2';
+      quantityNum.innerHTML = `${chartInput[2].quantity}`;
+
+      document.getElementById(`barContainer${dataCount}`).appendChild(quantityNum);
+    }
+
+    if (
+      chartInput[0].label != '' &&
+      chartInput[0].labelColor != '' &&
+      chartInput[0].quantity != '' &&
+      chartInput[0].barColor != '' &&
+      chartInput[1].label != '' &&
+      chartInput[1].labelColor != '' &&
+      chartInput[1].quantity != '' &&
+      chartInput[1].barColor != '' &&
+      chartInput[2].label != '' &&
+      chartInput[2].labelColor != '' &&
+      chartInput[2].quantity != '' &&
+      chartInput[2].barColor != '') {
+
+      data.push(chartInput);
+      console.log(chartInput);
+      console.log(data);
+      createLabel();
+      createContainer();
+      createBar();
+      quantityDisplay();
+      createLabel1();
+      createBar1();
+      quantityDisplay1();
+      createLabel2();
+      createBar2();
+      quantityDisplay2();
+    }
+    else if (
+      chartInput[0].label != '' &&
+      chartInput[0].labelColor != '' &&
+      chartInput[0].quantity != '' &&
+      chartInput[0].barColor != '' &&
+      chartInput[1].label != '' &&
+      chartInput[1].labelColor != '' &&
+      chartInput[1].quantity != '' &&
+      chartInput[1].barColor != '') {
+
+      data.push(chartInput);
+      console.log(chartInput);
+      console.log(data);
+      createLabel();
+      createContainer();
+      createBar();
+      quantityDisplay();
+      createLabel1();
+      createBar1();
+      quantityDisplay1();
+    }
+    else if (
+      chartInput[0].label != '' &&
+      chartInput[0].labelColor != '' &&
+      chartInput[0].quantity != '' &&
+      chartInput[0].barColor != '') {
+
+      data.push(chartInput);
+      console.log(chartInput);
+      console.log(data);
+      createLabel();
+      createContainer();
+      createBar();
+      quantityDisplay();
+    }
+
 
     //second submit button
     const dataBtn = document.getElementById("chartDataBtn");
     dataBtn.addEventListener("click", function () {
-      let dataInput = document.querySelectorAll(".input");
+      let dataInput = document.querySelectorAll(".inputBar");
       dataInput.forEach(item => {
         item.value = "";
       });
     });
 
+    dataCount++;
   }
 
   //function to clear display input fields
@@ -892,17 +1052,17 @@ const inputSectionBuild = function () {
       target.style.display = 'inline';
     }
   })
-  let addCount = 1;
+
   const addButton = document.querySelector('#addBtn');
   addButton.addEventListener('click', function () {
     addCount++;
-    let addValue1 = document.querySelector('.input2');
-    let addValue2 = document.querySelector('.input3');
-    if (addCount == 2 && addValue1.style.display == 'none'){
-      addValue1.style.display = '';      
+    let addValue1 = document.querySelector('.input1');
+    let addValue2 = document.querySelector('.input2');
+    if (addCount == 1 && addValue1.style.display == 'none') {
+      addValue1.style.display = '';
     }
-    else if (addCount == 3 && addValue2.style.display == 'none'){
-      addValue2.style.display = '';      
+    else if (addCount == 2 && addValue2.style.display == 'none') {
+      addValue2.style.display = '';
     }
   })
 
