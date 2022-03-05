@@ -828,13 +828,14 @@ const inputSectionBuild = function () {
     const createContainer = function () {
       let container = document.createElement("div");
       container.id = `barContainer${dataCount}`;
-      container.classList = `container column bar`;
+      container.classList = `column bar`;
       container.style.position = 'relative';
+      container.style.maxheight = '95%';
       container.style.textAlign = 'center';
       container.style.display = 'flex';
       container.style.flexDirection = 'column';
       container.style.justifyContent = 'end';
-      container.style.margin = `0 ${displayDetails.spacing}% -0.5% ${displayDetails.spacing}%`;
+      container.style.margin = `0 ${displayDetails.spacing}% -10px ${displayDetails.spacing}%`;
 
       document.getElementById("flexBox").appendChild(container);
     }
