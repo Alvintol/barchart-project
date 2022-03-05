@@ -467,7 +467,7 @@ const inputSectionBuild = function () {
     quantityDisplayList2.innerHTML = 'Center';
     document.querySelector('#quantityDisplay').appendChild(quantityDisplayList2)
     const quantityDisplayList3 = document.createElement('option');
-    quantityDisplayList3.value = '2%';
+    quantityDisplayList3.value = '10%';
     quantityDisplayList3.innerHTML = 'Bottom';
     document.querySelector('#quantityDisplay').appendChild(quantityDisplayList3)
   }
@@ -804,13 +804,25 @@ const inputSectionBuild = function () {
       }
     ];
 
+    const createLabelContainer = function() {
+      let labelContainer = document.createElement('div');
+      labelContainer.id = `labelContainer${dataCount}`;
+      labelContainer.classList = `container label row bar`;
+      labelContainer.style.display = 'flex';
+      labelContainer.style.fontWeight = 'bold';
+      labelContainer.style.flexDirection = 'row';
+      labelContainer.style.justifyContent = 'space-evenly';
+      document.getElementById('flexBottom').appendChild(labelContainer);
+    }
+
     const createLabel = function () {
       let label = document.createElement("div");
       label.id = `label${dataCount}`;
       label.classList = `label column bar`;
       label.innerHTML = `${chartInput[0].label}`;
       label.style.color = `${chartInput[0].labelColor}`;
-      document.getElementById("flexBottom").appendChild(label);
+      label.style.textShadow = `0.5px 0.5px 0.5px #000000`;
+      document.getElementById(`labelContainer${dataCount}`).appendChild(label);
     }
     //function that creates a container for bar element in chart
     const createContainer = function () {
@@ -830,7 +842,7 @@ const inputSectionBuild = function () {
     //function that builds bar representing data with quantity number
     const createBar = function () {
       let bar = document.createElement("div");
-      bar.id = `bar${dataCount}`;
+      bar.id = `bar${dataCount}A`;
       bar.classList = `column bar`;
       bar.style.position = 'relative';
       bar.style.width = '100%';
@@ -839,7 +851,7 @@ const inputSectionBuild = function () {
       bar.style.height = `${heightPercent}%`;
       bar.style.margin = '0 2px 0 2px';
       bar.style.bottom = '0';
-      bar.style.zIndex = '1';
+      bar.style.zIndex = '0';
       bar.style.background = `${chartInput[0].barColor}`;
       bar.style.transformOrigin = 'bottom';
 
@@ -856,10 +868,10 @@ const inputSectionBuild = function () {
       quantityNum.style.position = 'absolute';
       quantityNum.style.width = '100%';
       quantityNum.style.bottom = `${displayDetails.quantityDisplay}`
-      quantityNum.style.zIndex = '2';
+      quantityNum.style.zIndex = '3';
       quantityNum.innerHTML = `${chartInput[0].quantity}`;
 
-      document.getElementById(`barContainer${dataCount}`).appendChild(quantityNum);
+      document.getElementById(`bar${dataCount}A`).appendChild(quantityNum);
     }
     const createLabel1 = function () {
       let label = document.createElement("div");
@@ -867,12 +879,13 @@ const inputSectionBuild = function () {
       label.classList = `label column bar`;
       label.innerHTML = `${chartInput[1].label}`;
       label.style.color = `${chartInput[1].labelColor}`;
-      document.getElementById("flexBottom").appendChild(label);
+      label.style.textShadow = `0.5px 0.5px 0.5px #000000`;
+      document.getElementById(`labelContainer${dataCount}`).appendChild(label);
     }
 
     const createBar1 = function () {
       let bar = document.createElement("div");
-      bar.id = `bar${dataCount}`;
+      bar.id = `bar${dataCount}B`;
       bar.classList = `column bar`;
       bar.style.position = 'relative';
       bar.style.width = '100%';
@@ -881,13 +894,12 @@ const inputSectionBuild = function () {
       bar.style.height = `${heightPercent}%`;
       bar.style.margin = '0 2px 0 2px';
       bar.style.bottom = '0';
-      bar.style.zIndex = '1';
+      bar.style.zIndex = '0';
       bar.style.background = `${chartInput[1].barColor}`;
       bar.style.transformOrigin = 'bottom';
 
       document.getElementById(`barContainer${dataCount}`).appendChild(bar);
     }
-
 
     const quantityDisplay1 = function () {
       let quantityNum = document.createElement("div");
@@ -897,23 +909,25 @@ const inputSectionBuild = function () {
       quantityNum.style.position = 'absolute';
       quantityNum.style.width = '100%';
       quantityNum.style.bottom = `${displayDetails.quantityDisplay}`
-      quantityNum.style.zIndex = '2';
+      quantityNum.style.zIndex = '3';
       quantityNum.innerHTML = `${chartInput[1].quantity}`;
 
-      document.getElementById(`barContainer${dataCount}`).appendChild(quantityNum);
+      document.getElementById(`bar${dataCount}B`).appendChild(quantityNum);
     }
+
     const createLabel2 = function () {
       let label = document.createElement("div");
       label.id = `label${dataCount}`;
       label.classList = `label column bar`;
-      label.innerHTML = `${chartInput[1].label}`;
-      label.style.color = `${chartInput[1].labelColor}`;
-      document.getElementById("flexBottom").appendChild(label);
+      label.innerHTML = `${chartInput[2].label}`;
+      label.style.color = `${chartInput[2].labelColor}`;
+      label.style.textShadow = `0.5px 0.5px 0.5px #000000`;
+      document.getElementById(`labelContainer${dataCount}`).appendChild(label);
     }
 
     const createBar2 = function () {
       let bar = document.createElement("div");
-      bar.id = `bar${dataCount}`;
+      bar.id = `bar${dataCount}C`;
       bar.classList = `column bar`;
       bar.style.position = 'relative';
       bar.style.width = '100%';
@@ -922,7 +936,7 @@ const inputSectionBuild = function () {
       bar.style.height = `${heightPercent}%`;
       bar.style.margin = '0 2px 0 2px';
       bar.style.bottom = '0';
-      bar.style.zIndex = '1';
+      bar.style.zIndex = '0';
       bar.style.background = `${chartInput[2].barColor}`;
       bar.style.transformOrigin = 'bottom';
 
@@ -939,10 +953,10 @@ const inputSectionBuild = function () {
       quantityNum.style.position = 'absolute';
       quantityNum.style.width = '100%';
       quantityNum.style.bottom = `${displayDetails.quantityDisplay}`
-      quantityNum.style.zIndex = '2';
+      quantityNum.style.zIndex = '3';
       quantityNum.innerHTML = `${chartInput[2].quantity}`;
 
-      document.getElementById(`barContainer${dataCount}`).appendChild(quantityNum);
+      document.getElementById(`bar${dataCount}C`).appendChild(quantityNum);
     }
 
     if (
@@ -962,6 +976,7 @@ const inputSectionBuild = function () {
       data.push(chartInput);
       console.log(chartInput);
       console.log(data);
+      createLabelContainer();
       createLabel();
       createContainer();
       createBar();
@@ -986,6 +1001,7 @@ const inputSectionBuild = function () {
       data.push(chartInput);
       console.log(chartInput);
       console.log(data);
+      createLabelContainer();
       createLabel();
       createContainer();
       createBar();
@@ -1003,6 +1019,7 @@ const inputSectionBuild = function () {
       data.push(chartInput);
       console.log(chartInput);
       console.log(data);
+      createLabelContainer();
       createLabel();
       createContainer();
       createBar();
