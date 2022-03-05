@@ -804,7 +804,7 @@ const inputSectionBuild = function () {
       }
     ];
 
-    const createLabelContainer = function() {
+    const createLabelContainer = function () {
       let labelContainer = document.createElement('div');
       labelContainer.id = `labelContainer${dataCount}`;
       labelContainer.classList = `container label row bar`;
